@@ -7,7 +7,7 @@
     "es2021": true,
     "node": true
   },
-  "parser": "@babel/eslint-parser",
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "react-app",
     "plugin:react/recommended",
@@ -25,6 +25,7 @@
   "plugins": ["react"],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "multiline-ternary": "off"
+    "multiline-ternary": "off",
+    "no-use-before-define": "off"
   }
 }
