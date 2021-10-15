@@ -7,7 +7,6 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-mdx',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -26,6 +25,12 @@ module.exports = {
       },
       __key: 'pages'
     },
-    'gatsby-plugin-root-import'
+    'gatsby-plugin-root-import',
+    {
+      resolve: 'gatsby-plugin-layout',
+      options: {
+        component: require.resolve('./src/components/Layout/index.ts')
+      }
+    }
   ]
 }
