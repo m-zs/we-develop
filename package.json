@@ -13,7 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint:js": "eslint . --ext tsx,ts,js,jsx",
+    "lint:js": "eslint . --ext tsx,ts,js,jsx --fix",
     "format": "prettier --write .",
     "prepare": "husky install",
     "test": "jest --passWithNoTests --coverage",
