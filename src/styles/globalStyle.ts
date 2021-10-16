@@ -10,7 +10,7 @@ ${({ theme }) => `
   ${fonts}
 
   body {
-    font-family: 'Open Sans';
+    font-family: ${theme.fonts.main};
   }
 
   *:focus:not(:focus-visible) {
