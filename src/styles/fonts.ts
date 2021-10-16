@@ -1,11 +1,11 @@
-import MontserratRegularWOFF from 'assets/fonts/montserrat/montserrat-v15-latin-ext_latin-regular.woff'
-import MontserratRegularWOFF2 from 'assets/fonts/montserrat/montserrat-v15-latin-ext_latin-regular.woff2'
-import Montserrat500WOFF from 'assets/fonts/montserrat/montserrat-v15-latin-ext_latin-500.woff'
-import Montserrat500WOFF2 from 'assets/fonts/montserrat/montserrat-v15-latin-ext_latin-500.woff2'
-import OpenSansRegularWOFF from 'assets/fonts/open-sans/open-sans-v18-latin-ext_latin-regular.woff'
-import OpenSansRegularWOFF2 from 'assets/fonts/open-sans/open-sans-v18-latin-ext_latin-regular.woff2'
-import OpenSans300WOFF from 'assets/fonts/open-sans/open-sans-v18-latin-ext_latin-300.woff'
-import OpenSans300WOFF2 from 'assets/fonts/open-sans/open-sans-v18-latin-ext_latin-300.woff2'
+import MontserratRegularWOFF from 'assets/fonts/montserrat/montserrat-v15-latin-ext_latin-regular.woff';
+import MontserratRegularWOFF2 from 'assets/fonts/montserrat/montserrat-v15-latin-ext_latin-regular.woff2';
+import Montserrat500WOFF from 'assets/fonts/montserrat/montserrat-v15-latin-ext_latin-500.woff';
+import Montserrat500WOFF2 from 'assets/fonts/montserrat/montserrat-v15-latin-ext_latin-500.woff2';
+import OpenSansRegularWOFF from 'assets/fonts/open-sans/open-sans-v18-latin-ext_latin-regular.woff';
+import OpenSansRegularWOFF2 from 'assets/fonts/open-sans/open-sans-v18-latin-ext_latin-regular.woff2';
+import OpenSans300WOFF from 'assets/fonts/open-sans/open-sans-v18-latin-ext_latin-300.woff';
+import OpenSans300WOFF2 from 'assets/fonts/open-sans/open-sans-v18-latin-ext_latin-300.woff2';
 
 export const fonts = `
   @font-face {
@@ -43,4 +43,4 @@ export const fonts = `
       url(${OpenSans300WOFF2}) format('woff2'),
       url(${OpenSans300WOFF}) format('woff');
   }
-`
+`;

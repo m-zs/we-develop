@@ -1,50 +1,50 @@
-import { render } from '@testing-library/react'
-import React, { useEffect } from 'react'
+import { render } from '@testing-library/react';
+import React, { useEffect } from 'react';
 
-import { useMatchMedia } from './use-match-media'
+import { useMatchMedia } from './use-match-media';
 
 describe('useMatchMedia', () => {
-  const onMatch = jest.fn()
-  const onNoMatch = jest.fn()
+  const onMatch = jest.fn();
+  const onNoMatch = jest.fn();
   const Wrapper = () => {
-    const isMatching = useMatchMedia('(max-width: 1200px)')
+    const isMatching = useMatchMedia('(max-width: 1200px)');
 
     useEffect(() => {
       if (isMatching) {
-        onMatch()
+        onMatch();
       } else {
-        onNoMatch()
+        onNoMatch();
       }
-    }, [isMatching])
+    }, [isMatching]);
 
-    return <div />
-  }
+    return <div />;
+  };
 
   beforeEach(() => {
-    jest.clearAllMocks()
-  })
+    jest.clearAllMocks();
+  });
 
   it('should call function when mq is not matching', () => {
     window.matchMedia = jest.fn().mockImplementation(() => ({
       matches: false,
       addListener: jest.fn(),
-      removeListener: jest.fn()
-    }))
+      removeListener: jest.fn(),
+    }));
 
-    render(<Wrapper />)
+    render(<Wrapper />);
 
-    expect(onNoMatch).toHaveBeenCalled()
-  })
+    expect(onNoMatch).toHaveBeenCalled();
+  });
 
   it('should call function when mq is matching', () => {
     window.matchMedia = jest.fn().mockImplementation(() => ({
       matches: true,
       addListener: jest.fn(),
-      removeListener: jest.fn()
-    }))
+      removeListener: jest.fn(),
+    }));
 
-    render(<Wrapper />)
+    render(<Wrapper />);
 
-    expect(onMatch).toHaveBeenCalled()
-  })
-})
+    expect(onMatch).toHaveBeenCalled();
+  });
+});

@@ -1,1 +1,1 @@
-export * from './use-match-media'
+export * from './use-match-media';
