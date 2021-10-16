@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
-    title: 'we-develop'
+    siteUrl: 'https://we-develop.net',
+    title: 'we-develop',
   },
   plugins: [
     'gatsby-plugin-image',
@@ -13,24 +13,26 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: './src/images/'
+        path: './src/images/',
       },
-      __key: 'images'
+      __key: 'images',
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: './src/pages/'
+        path: './src/pages/',
       },
-      __key: 'pages'
+      __key: 'pages',
     },
     'gatsby-plugin-root-import',
     {
       resolve: 'gatsby-plugin-layout',
       options: {
-        component: require.resolve('./src/components/Layout/index.ts')
-      }
-    }
-  ]
-}
+        component: require.resolve('./src/components/Layout/index.ts'),
+      },
+    },
+
+    'gatsby-plugin-mdx',
+  ],
+};
