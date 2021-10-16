@@ -26,13 +26,12 @@ module.exports = {
       __key: 'pages',
     },
     'gatsby-plugin-root-import',
-    {
-      resolve: 'gatsby-plugin-layout',
-      options: {
-        component: require.resolve('./src/components/Layout/index.ts'),
-      },
-    },
-
+    // {
+    //   resolve: 'gatsby-plugin-layout',
+    //   options: {
+    //     component: require.resolve('./src/components/Layout/index.ts'),
+    //   },
+    // },
     'gatsby-plugin-mdx',
   ],
 };
