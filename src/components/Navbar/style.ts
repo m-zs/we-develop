@@ -7,9 +7,8 @@ export const Container = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 70px;
     z-index: 99;
-    padding: 0 20px;
+    padding: 20px;
     background: ${theme.colors.white};
   `}
 `;
@@ -60,7 +59,7 @@ export const NavLink = styled(Link)`
       pointer-events: none;
       content: '';
       width: 0;
-      height: 2px;
+      height: 3px;
       position: absolute;
       bottom: -10px;
       left: 0;
@@ -70,25 +69,27 @@ export const NavLink = styled(Link)`
     }
     
     &:hover {
-      color: lightgray;
+      color: ${theme.colors.layoutHighlight};
       
       &:after {
         visibility: visible;
         width: 100%;
-        background-color: ${theme.colors.gray};
+        background-color: ${theme.colors.layoutHighlight};
       }
     }
     
     &.active {
+      color: ${theme.colors.layoutMain};
+
       &:after {
         visibility: visible;
         width: 100%;
-        background: ${theme.colors.black};
+        background: ${theme.colors.layoutMain};
       }
       
       &:hover {
         &:after {
-          background-color: ${theme.colors.gray};
+          background-color: ${theme.colors.layoutHighlight};
         }
       }
     }
