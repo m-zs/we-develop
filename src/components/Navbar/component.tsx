@@ -11,6 +11,7 @@ const Navbar = () => {
   const shouldRenderHamburger = useMatchMedia(
     `(max-width: ${theme.breakpoints.mobile})`
   )
+  const isMobileNavVisible = shouldRenderHamburger && isActive
 
   return (
     <S.Container>
@@ -21,7 +22,8 @@ const Navbar = () => {
       {shouldRenderHamburger && (
         <S.ToggleNavButton
           onClick={() => setIsActive(!isActive)}
-          isActive={shouldRenderHamburger && isActive}
+          isActive={isMobileNavVisible}
+          data-testid="navbar-hamburger"
         >
           <span />
           <span />
@@ -29,7 +31,11 @@ const Navbar = () => {
         </S.ToggleNavButton>
       )}
 
-      <S.LinksContainer isActive={shouldRenderHamburger && isActive}>
+      <S.LinksContainer
+        {...(shouldRenderHamburger && { 'aria-hidden': !isMobileNavVisible })}
+        isActive={isMobileNavVisible}
+        data-testid="navbar-links"
+      >
         <S.NavLink to="/" activeClassName="active">
           Home
         </S.NavLink>
