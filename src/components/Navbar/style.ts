@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { Link } from 'gatsby'
+import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 export const Container = styled.nav`
   ${({ theme }) => `
@@ -12,7 +12,7 @@ export const Container = styled.nav`
     padding: 0 20px;
     background: ${theme.colors.white};
   `}
-`
+`;
 
 export const Logo = styled.img`
   width: 130px;
@@ -22,7 +22,7 @@ export const Logo = styled.img`
   &:hover {
     filter: drop-shadow(5px 5px 0 rgba(0, 0, 0, 0.1));
   }
-`
+`;
 export const LinksContainer = styled.div<{ isActive: boolean }>`
   ${({ theme, isActive }) => `
     display: flex;
@@ -44,7 +44,7 @@ export const LinksContainer = styled.div<{ isActive: boolean }>`
       opacity: ${isActive ? 1 : 0};
     }
   `}
-`
+`;
 export const NavLink = styled(Link)`
   ${({ theme }) => `
     display: inline-flex;
@@ -93,7 +93,7 @@ export const NavLink = styled(Link)`
       }
     }
   `}
-`
+`;
 export const ToggleNavButton = styled.button<{ isActive: boolean }>`
   ${({ theme, isActive }) => `
     all: unset;
@@ -135,4 +135,4 @@ export const ToggleNavButton = styled.button<{ isActive: boolean }>`
       }
     }
   `}
-`
+`;

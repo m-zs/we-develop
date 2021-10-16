@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import { Link } from 'gatsby'
+import React, { useState } from 'react';
+import { Link } from 'gatsby';
 
-import logo from 'assets/images/logo.svg'
-import { theme } from 'styles/theme'
-import * as S from './style'
-import { useMatchMedia } from 'shared/hooks/useMatchMedia'
+import logo from 'assets/images/logo.svg';
+import { theme } from 'styles/theme';
+import * as S from './style';
+import { useMatchMedia } from 'shared/hooks/useMatchMedia';
 
 const Navbar = () => {
-  const [isActive, setIsActive] = useState(false)
+  const [isActive, setIsActive] = useState(false);
   const shouldRenderHamburger = useMatchMedia(
-    `(max-width: ${theme.breakpoints.mobile})`
-  )
-  const isMobileNavVisible = shouldRenderHamburger && isActive
+    `(max-width: ${theme.breakpoints.mobile})`,
+  );
+  const isMobileNavVisible = shouldRenderHamburger && isActive;
 
   return (
     <S.Container>
@@ -50,7 +50,7 @@ const Navbar = () => {
         </S.NavLink>
       </S.LinksContainer>
     </S.Container>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
