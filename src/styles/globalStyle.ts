@@ -9,6 +9,17 @@ ${({ theme }) => `
   ${normalize}
   ${fonts}
 
+  * {
+    box-sizing: border-box;
+    line-height: normal;
+  }
+
+  html, body, #___gatsby, #gatsby-focus-wrapper {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
   body {
     font-family: ${theme.fonts.main};
   }
