@@ -1,7 +1,15 @@
-import React from 'react'
+import React from 'react';
+
+import Seo from 'components/Seo';
 
 const IndexPage = () => {
-  return <main></main>
-}
+  return (
+    <>
+      <Seo title="Homepage" description="" />
 
-export default IndexPage
+      <div>homepage</div>
+    </>
+  );
+};
+
+export default IndexPage;
