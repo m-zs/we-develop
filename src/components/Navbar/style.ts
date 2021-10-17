@@ -10,6 +10,8 @@ export const Container = styled.nav`
     z-index: 99;
     padding: 20px;
     background: ${theme.colors.body};
+    position: sticky;
+    min-height: 70px;
   `}
 `;
 
@@ -19,7 +21,7 @@ export const Logo = styled.h1`
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 22px;
+    font-size: 20px;
     transition-duration: 0.2s;
 
     &:hover {
@@ -104,7 +106,7 @@ export const ToggleNavButton = styled.button<{ isActive: boolean }>`
       display: block;
       width: 20px;
       height: 2px;
-      background ${theme.colors.black};
+      background ${theme.colors.font};
       transition-duration: 0.2s;
 
       &:nth-of-type(1), &:nth-of-type(3) {
