@@ -6,11 +6,10 @@ export const Container = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100vh;
 `;
 
 export const Content = styled.main`
   flex: 1;
   padding: 20px;
-  min-height: 800px;
 `;
