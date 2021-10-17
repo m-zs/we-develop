@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'gatsby';
 
 import logo from 'assets/images/logo.svg';
-import { theme } from 'styles/theme';
+import { themeBase } from 'styles/theme';
 import * as S from './style';
 import { useMatchMedia } from 'shared/hooks/useMatchMedia';
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
   const shouldRenderHamburger = useMatchMedia(
-    `(max-width: ${theme.breakpoints.mobile})`,
+    `(max-width: ${themeBase.breakpoints.mobile})`,
   );
   const isMobileNavVisible = shouldRenderHamburger && isActive;
 

@@ -1,7 +1,21 @@
-import { theme } from 'styles/theme';
+import 'styled-components';
 
 declare module 'styled-components' {
-  type Theme = typeof theme;
-
-  export interface DefaultTheme extends Theme {}
+  export interface DefaultTheme {
+    fonts: { headings: string; main: string };
+    colors: {
+      black: string;
+      gray: string;
+      white: string;
+      layoutMain: string;
+      layoutHighlight: string;
+      lightGray: string;
+      body: string;
+    };
+    breakpoints: {
+      mobile: string;
+      tablet: string;
+      laptop: string;
+    };
+  }
 }

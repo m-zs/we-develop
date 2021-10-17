@@ -1,10 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 
-import { theme } from './theme';
 import { fonts } from './fonts';
 
-export const GlobalStyle = createGlobalStyle<{ theme: typeof theme }>`
+export const GlobalStyle = createGlobalStyle`
 ${({ theme }) => `
   ${normalize}
   ${fonts}
