@@ -13,7 +13,7 @@ const Navbar = () => {
   const isMobileNavVisible = shouldRenderHamburger && isActive;
 
   return (
-    <S.Container>
+    <S.Container data-testid="navbar">
       <Link to="/">
         <S.Logo>we develop</S.Logo>
       </Link>
