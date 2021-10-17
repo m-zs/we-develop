@@ -14,6 +14,7 @@ export const fonts = `
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: local('Montserrat Regular'), local('Montserrat-Regular'),
       url(${MontserratRegularWOFF2}) format('woff2'),
       url(${MontserratRegularWOFF}) format('woff');
@@ -23,6 +24,7 @@ export const fonts = `
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
+    font-display: swap;
     src: url(${Montserrat500WOFF2}) format('woff2'),
       url(${Montserrat500WOFF}) format('woff');
   }
@@ -31,6 +33,7 @@ export const fonts = `
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 900;
+    font-display: swap;
     src: url(${Montserrat900WOFF2}) format('woff2'),
       url(${Montserrat900WOFF}) format('woff');
   }
@@ -39,6 +42,7 @@ export const fonts = `
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: local('Open Sans Regular'), local('OpenSans-Regular'),
       url(${OpenSansRegularWOFF2}) format('woff2'),
       url(${OpenSansRegularWOFF}) format('woff');
@@ -48,6 +52,7 @@ export const fonts = `
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 300;
+    font-display: swap;
     src: local('Open Sans Regular'), local('OpenSans-Regular'),
       url(${OpenSans300WOFF2}) format('woff2'),
       url(${OpenSans300WOFF}) format('woff');
