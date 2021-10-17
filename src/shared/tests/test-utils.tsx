@@ -3,10 +3,10 @@ import React, { FC, ReactElement } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 
-import { theme } from 'styles/theme';
+import { themes } from 'styles/theme';
 
 const AllTheProviders: FC = ({ children }) => {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  return <ThemeProvider theme={themes.light}>{children}</ThemeProvider>;
 };
 
 const customRender = (
