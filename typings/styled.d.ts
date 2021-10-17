@@ -11,6 +11,8 @@ declare module 'styled-components' {
       layoutHighlight: string;
       lightGray: string;
       body: string;
+      font: string;
+      textHighlight: string;
     };
     breakpoints: {
       mobile: string;

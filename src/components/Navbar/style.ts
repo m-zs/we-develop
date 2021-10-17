@@ -9,7 +9,7 @@ export const Container = styled.nav`
     justify-content: space-between;
     z-index: 99;
     padding: 20px;
-    background: ${theme.colors.white};
+    background: ${theme.colors.body};
   `}
 `;
 
@@ -25,7 +25,7 @@ export const Logo = styled.img`
 export const LinksContainer = styled.div<{ isActive: boolean }>`
   ${({ theme, isActive }) => `
     display: flex;
-    background: ${theme.colors.white};
+    background: ${theme.colors.body};
 
     @media (max-width: ${theme.breakpoints.mobile}) {
       transition-duration: 0.1s;
@@ -69,28 +69,16 @@ export const NavLink = styled(Link)`
     }
     
     &:hover {
-      color: ${theme.colors.layoutHighlight};
-      
-      &:after {
-        visibility: visible;
-        width: 100%;
-        background-color: ${theme.colors.layoutHighlight};
-      }
+      color: ${theme.colors.textHighlight};
     }
     
     &.active {
-      color: ${theme.colors.layoutMain};
+      color: ${theme.colors.textHighlight};
 
       &:after {
         visibility: visible;
         width: 100%;
-        background: ${theme.colors.layoutMain};
-      }
-      
-      &:hover {
-        &:after {
-          background-color: ${theme.colors.layoutHighlight};
-        }
+        background: ${theme.colors.textHighlight};
       }
     }
   `}

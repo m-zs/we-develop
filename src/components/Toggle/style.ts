@@ -9,12 +9,11 @@ export const Container = styled.div<{ position: Position }>`
     align-items: center;
     width: 68px;
     height: 30px;
-    background: ${theme.colors.black};
+    background: #1e272e;
     padding: 5px;
     border-radius: 30px;
     cursor: pointer;
     position: relative;
-    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.2);
 
     &:after {
       content: '';
@@ -28,7 +27,6 @@ export const Container = styled.div<{ position: Position }>`
       border-radius: 30px;
       transition-duration: 0.2s;
       transform: ${position === 'left' ? 'none' : 'translateX(44px)'};
-      box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.2);
     }
 
     &:hover {

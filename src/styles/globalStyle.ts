@@ -22,6 +22,7 @@ ${({ theme }) => `
   body {
     font-family: ${theme.fonts.main};
     background: ${theme.colors.body};
+    color: ${theme.colors.font};
   }
 
   *:focus:not(:focus-visible) {
