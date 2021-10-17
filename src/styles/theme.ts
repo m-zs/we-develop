@@ -15,7 +15,7 @@ const dark: DefaultTheme = {
     black: '#000',
     white: '#fff',
     gray: '#57606f',
-    body: '#fff',
+    body: '#000',
     layoutMain: '#2c2c54',
     layoutHighlight: '#40407a',
     lightGray: '#f5f6fa',
@@ -28,7 +28,7 @@ const light: DefaultTheme = {
     black: '#000',
     white: '#fff',
     gray: '#57606f',
-    body: '#000',
+    body: '#fff',
     layoutMain: '#2c2c54',
     layoutHighlight: '#40407a',
     lightGray: '#f5f6fa',
@@ -39,3 +39,5 @@ export const themes = {
   light,
   dark,
 };
+
+export type ThemeVariants = keyof typeof themes;

@@ -2,10 +2,11 @@ import React, { FC } from 'react';
 
 import sun from 'assets/images/sun.svg';
 import moon from 'assets/images/moon.svg';
+import { FooterProps } from './type';
 import * as S from './style';
 import Toggle from 'components/Toggle';
 
-const Footer: FC = () => {
+const Footer: FC<FooterProps> = ({ selectedTheme, toggleThemeCallback }) => {
   return (
     <S.Container>
       <S.Socials>
@@ -18,7 +19,8 @@ const Footer: FC = () => {
       <Toggle
         imageLeft={{ src: sun, alt: '' }}
         imageRight={{ src: moon, alt: '' }}
-        toggleCallback={() => {}}
+        toggleCallback={toggleThemeCallback}
+        selectedSide={selectedTheme === 'light' ? 'left' : 'right'}
       />
     </S.Container>
   );
