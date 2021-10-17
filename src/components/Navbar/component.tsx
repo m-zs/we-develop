@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 
-import logo from 'assets/images/logo.svg';
 import { themeBase } from 'styles/theme';
 import * as S from './style';
 import { useMatchMedia } from 'shared/hooks/useMatchMedia';
@@ -16,7 +15,7 @@ const Navbar = () => {
   return (
     <S.Container>
       <Link to="/">
-        <S.Logo src={logo} alt="we develop text" />
+        <S.Logo>we develop</S.Logo>
       </Link>
 
       {shouldRenderHamburger && (

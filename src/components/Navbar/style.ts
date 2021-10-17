@@ -13,15 +13,21 @@ export const Container = styled.nav`
   `}
 `;
 
-export const Logo = styled.img`
-  width: 130px;
-  max-width: 100%;
-  transition-duration: 0.2s;
+export const Logo = styled.h1`
+  ${({ theme }) => `
+    color: ${theme.colors.font};
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 22px;
+    transition-duration: 0.2s;
 
-  &:hover {
-    filter: drop-shadow(5px 5px 0 rgba(0, 0, 0, 0.1));
-  }
+    &:hover {
+      color: ${theme.colors.textHighlight};
+    }
+  `}
 `;
+
 export const LinksContainer = styled.div<{ isActive: boolean }>`
   ${({ theme, isActive }) => `
     display: flex;
