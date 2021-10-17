@@ -7,26 +7,33 @@ export const Container = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 70px;
     z-index: 99;
-    padding: 0 20px;
-    background: ${theme.colors.white};
+    padding: 20px;
+    background: ${theme.colors.body};
+    position: sticky;
+    min-height: 70px;
   `}
 `;
 
-export const Logo = styled.img`
-  width: 130px;
-  max-width: 100%;
-  transition-duration: 0.2s;
+export const Logo = styled.h1`
+  ${({ theme }) => `
+    color: ${theme.colors.font};
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 20px;
+    transition-duration: 0.2s;
 
-  &:hover {
-    filter: drop-shadow(5px 5px 0 rgba(0, 0, 0, 0.1));
-  }
+    &:hover {
+      color: ${theme.colors.textHighlight};
+    }
+  `}
 `;
+
 export const LinksContainer = styled.div<{ isActive: boolean }>`
   ${({ theme, isActive }) => `
     display: flex;
-    background: ${theme.colors.white};
+    background: ${theme.colors.body};
 
     @media (max-width: ${theme.breakpoints.mobile}) {
       transition-duration: 0.1s;
@@ -60,7 +67,7 @@ export const NavLink = styled(Link)`
       pointer-events: none;
       content: '';
       width: 0;
-      height: 2px;
+      height: 3px;
       position: absolute;
       bottom: -10px;
       left: 0;
@@ -70,26 +77,16 @@ export const NavLink = styled(Link)`
     }
     
     &:hover {
-      color: lightgray;
-      
-      &:after {
-        visibility: visible;
-        width: 100%;
-        background-color: ${theme.colors.gray};
-      }
+      color: ${theme.colors.textHighlight};
     }
     
     &.active {
+      color: ${theme.colors.textHighlight};
+
       &:after {
         visibility: visible;
         width: 100%;
-        background: ${theme.colors.black};
-      }
-      
-      &:hover {
-        &:after {
-          background-color: ${theme.colors.gray};
-        }
+        background: ${theme.colors.textHighlight};
       }
     }
   `}
@@ -109,7 +106,7 @@ export const ToggleNavButton = styled.button<{ isActive: boolean }>`
       display: block;
       width: 20px;
       height: 2px;
-      background ${theme.colors.black};
+      background ${theme.colors.font};
       transition-duration: 0.2s;
 
       &:nth-of-type(1), &:nth-of-type(3) {
