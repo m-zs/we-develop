@@ -2,11 +2,7 @@ import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 
 import icon from 'assets/images/icon.svg';
-
-interface SeoProps {
-  title: string;
-  description: string;
-}
+import { SeoProps } from './type';
 
 const Seo: FC<SeoProps> = ({ title, description }) => (
   <Helmet>
