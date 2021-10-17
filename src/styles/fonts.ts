@@ -2,6 +2,8 @@ import MontserratRegularWOFF from 'assets/fonts/montserrat/montserrat-v15-latin-
 import MontserratRegularWOFF2 from 'assets/fonts/montserrat/montserrat-v15-latin-ext_latin-regular.woff2';
 import Montserrat500WOFF from 'assets/fonts/montserrat/montserrat-v15-latin-ext_latin-500.woff';
 import Montserrat500WOFF2 from 'assets/fonts/montserrat/montserrat-v15-latin-ext_latin-500.woff2';
+import Montserrat900WOFF from 'assets/fonts/montserrat/montserrat-v18-latin-900.woff';
+import Montserrat900WOFF2 from 'assets/fonts/montserrat/montserrat-v18-latin-900.woff2';
 import OpenSansRegularWOFF from 'assets/fonts/open-sans/open-sans-v18-latin-ext_latin-regular.woff';
 import OpenSansRegularWOFF2 from 'assets/fonts/open-sans/open-sans-v18-latin-ext_latin-regular.woff2';
 import OpenSans300WOFF from 'assets/fonts/open-sans/open-sans-v18-latin-ext_latin-300.woff';
@@ -21,9 +23,16 @@ export const fonts = `
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
-    src: local('Montserrat Regular'), local('Montserrat-Regular'),
-      url(${Montserrat500WOFF2}) format('woff2'),
+    src: url(${Montserrat500WOFF2}) format('woff2'),
       url(${Montserrat500WOFF}) format('woff');
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    src: url(${Montserrat900WOFF2}) format('woff2'),
+      url(${Montserrat900WOFF}) format('woff');
   }
 
   @font-face {
