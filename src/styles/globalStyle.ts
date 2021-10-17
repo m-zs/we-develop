@@ -15,7 +15,7 @@ ${({ theme }) => `
   }
 
   html, body, #___gatsby, #gatsby-focus-wrapper {
-    height: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
   }
