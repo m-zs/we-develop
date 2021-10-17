@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 
 export const Container = styled.footer`
   ${({ theme }) => `
@@ -27,7 +26,7 @@ export const Socials = styled.div`
   align-items: center;
 `;
 
-export const SocialLink = styled(Link)`
+export const SocialLink = styled.a`
   ${({ theme }) => `
     color: ${theme.colors.white};
     font-family: ${theme.fonts.headings};

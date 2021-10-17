@@ -7,10 +7,10 @@ import * as S from './style';
 import Toggle from 'components/Toggle';
 
 const Footer: FC<FooterProps> = ({ selectedTheme, toggleThemeCallback }) => (
-  <S.Container>
+  <S.Container data-testid="footer">
     <S.Socials>
-      <S.SocialLink to="https://github.com/m-zs">github</S.SocialLink>
-      <S.SocialLink to="https://www.linkedin.com/in/mateusz-zasada-329176117">
+      <S.SocialLink href="https://github.com/m-zs">github</S.SocialLink>
+      <S.SocialLink href="https://www.linkedin.com/in/mateusz-zasada-329176117">
         linkedin
       </S.SocialLink>
     </S.Socials>
