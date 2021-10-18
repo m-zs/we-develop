@@ -5,6 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import { BlogProps } from './type';
 import * as S from './style';
+import Seo from 'components/Seo';
 import HighlightWrapper from './components/HighlightWrapper';
 
 const shortcodes = { Link, pre: HighlightWrapper };
@@ -19,28 +20,32 @@ const BlogPost: FC<BlogProps> = ({
   },
 }) => {
   return (
-    <S.Container>
-      <MDXProvider components={shortcodes}>
-        <S.Header>
-          <S.BlogLink to="/blog">Go back to Blog</S.BlogLink>
-          <S.InfoContainer>
-            <span>📆 {date}</span>
-            <span>📖 {readingTime.text}</span>
-          </S.InfoContainer>
-          <S.Title>{title}</S.Title>
-          <S.Tags>
-            {tags.map((tag) => (
-              <S.Tag key={tag}>{tag}</S.Tag>
-            ))}
-          </S.Tags>
-          {summary && <S.Summary>{summary}</S.Summary>}
-        </S.Header>
+    <>
+      <Seo title={title} description={summary} />
 
-        <S.Content>
-          <MDXRenderer>{body}</MDXRenderer>
-        </S.Content>
-      </MDXProvider>
-    </S.Container>
+      <S.Container>
+        <MDXProvider components={shortcodes}>
+          <S.Header>
+            <S.BlogLink to="/blog">Go back to Blog</S.BlogLink>
+            <S.InfoContainer>
+              <span>📆 {date}</span>
+              <span>📖 {readingTime.text}</span>
+            </S.InfoContainer>
+            <S.Title>{title}</S.Title>
+            <S.Tags>
+              {tags.map((tag) => (
+                <S.Tag key={tag}>{tag}</S.Tag>
+              ))}
+            </S.Tags>
+            {summary && <S.Summary>{summary}</S.Summary>}
+          </S.Header>
+
+          <S.Content>
+            <MDXRenderer>{body}</MDXRenderer>
+          </S.Content>
+        </MDXProvider>
+      </S.Container>
+    </>
   );
 };
 
