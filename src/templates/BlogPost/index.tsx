@@ -1,21 +1,38 @@
 import React, { FC } from 'react';
-import { graphql, PageProps, Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-interface Props extends PageProps {
-  data: {
-    mdx: any;
-  };
-}
+import { BlogProps } from './type';
 
 const shortcodes = { Link };
 
-const BlogPost: FC<Props> = ({ data: { mdx } }) => {
+const BlogPost: FC<BlogProps> = ({
+  data: {
+    mdx: {
+      body,
+      frontmatter: { title, tags, date },
+      fields: { readingTime },
+    },
+  },
+}) => {
   return (
-    <MDXProvider components={shortcodes}>
-      <MDXRenderer frontmatter={mdx.frontmatter}>{mdx.body}</MDXRenderer>
-    </MDXProvider>
+    <article>
+      <MDXProvider components={shortcodes}>
+        <div>
+          <h1>{title}</h1>
+          <span>📆 {date}</span>
+          <span>📖 {readingTime.text}</span>
+          <ul>
+            {tags.map((tag) => (
+              <li key={tag}>tag</li>
+            ))}
+          </ul>
+        </div>
+
+        <MDXRenderer>{body}</MDXRenderer>
+      </MDXProvider>
+    </article>
   );
 };
 
@@ -26,6 +43,13 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
+        date
+        tags
+      }
+      fields {
+        readingTime {
+          text
+        }
       }
     }
   }
