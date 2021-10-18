@@ -45,6 +45,6 @@ module.exports = {
       },
     },
     'gatsby-remark-reading-time',
-    // 'gatsby-plugin-styled-components'
+    'gatsby-plugin-styled-components',
   ],
 };
