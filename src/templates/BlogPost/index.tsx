@@ -4,8 +4,10 @@ import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import { BlogProps } from './type';
+import * as S from './style';
+import HighlightWrapper from './components/HighlightWrapper';
 
-const shortcodes = { Link };
+const shortcodes = { Link, pre: HighlightWrapper };
 
 const BlogPost: FC<BlogProps> = ({
   data: {
@@ -17,7 +19,7 @@ const BlogPost: FC<BlogProps> = ({
   },
 }) => {
   return (
-    <article>
+    <S.Container>
       <MDXProvider components={shortcodes}>
         <div>
           <h1>{title}</h1>
@@ -32,7 +34,7 @@ const BlogPost: FC<BlogProps> = ({
 
         <MDXRenderer>{body}</MDXRenderer>
       </MDXProvider>
-    </article>
+    </S.Container>
   );
 };
 
