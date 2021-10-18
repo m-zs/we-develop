@@ -5,3 +5,5 @@ public
 README.md
 .cache
 coverage
+*.md
+*.mdx

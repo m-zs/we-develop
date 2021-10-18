@@ -23,6 +23,8 @@ ${({ theme }) => `
     font-family: ${theme.fonts.main};
     background: ${theme.colors.body};
     color: ${theme.colors.font};
+    font-size: 16px;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
