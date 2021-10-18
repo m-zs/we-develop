@@ -32,6 +32,17 @@ module.exports = {
         component: require.resolve('./src/components/Layout/index.ts'),
       },
     },
-    'gatsby-plugin-mdx',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: './src/blog-posts/',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        extensions: ['.mdx', '.md'],
+      },
+    },
   ],
 };
