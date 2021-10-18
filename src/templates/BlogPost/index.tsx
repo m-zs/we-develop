@@ -13,7 +13,7 @@ const BlogPost: FC<BlogProps> = ({
   data: {
     mdx: {
       body,
-      frontmatter: { title, tags, date },
+      frontmatter: { title, tags, date, summary },
       fields: { readingTime },
     },
   },
@@ -21,18 +21,24 @@ const BlogPost: FC<BlogProps> = ({
   return (
     <S.Container>
       <MDXProvider components={shortcodes}>
-        <div>
-          <h1>{title}</h1>
-          <span>📆 {date}</span>
-          <span>📖 {readingTime.text}</span>
-          <ul>
+        <S.Header>
+          <S.BlogLink to="/blog">Go back to Blog</S.BlogLink>
+          <S.InfoContainer>
+            <span>📆 {date}</span>
+            <span>📖 {readingTime.text}</span>
+          </S.InfoContainer>
+          <S.Title>{title}</S.Title>
+          <S.Tags>
             {tags.map((tag) => (
-              <li key={tag}>tag</li>
+              <S.Tag key={tag}>{tag}</S.Tag>
             ))}
-          </ul>
-        </div>
+          </S.Tags>
+          {summary && <S.Summary>{summary}</S.Summary>}
+        </S.Header>
 
-        <MDXRenderer>{body}</MDXRenderer>
+        <S.Content>
+          <MDXRenderer>{body}</MDXRenderer>
+        </S.Content>
       </MDXProvider>
     </S.Container>
   );
@@ -47,6 +53,7 @@ export const pageQuery = graphql`
         title
         date
         tags
+        summary
       }
       fields {
         readingTime {

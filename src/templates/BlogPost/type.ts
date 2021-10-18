@@ -9,6 +9,7 @@ export interface BlogProps extends PageProps {
         title: string;
         date: string;
         tags: string[];
+        summary?: string;
       };
       fields: {
         readingTime: {
