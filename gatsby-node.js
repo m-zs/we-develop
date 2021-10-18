@@ -40,6 +40,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: node.fields.slug,
       // page template
       component: path.resolve('./src/templates/BlogPost/index.tsx'),
+      context: { id: node.id },
     });
   });
 };
