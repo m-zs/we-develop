@@ -44,3 +44,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 };
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { deletePage } = actions;
+
+  // if path is different than index, max 1 level nested
+  if (page.path.split('/')[2]) {
+    return deletePage(page);
+  }
+};
