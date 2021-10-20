@@ -6,6 +6,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { BlogProps } from './type';
 import * as S from './style';
 import Seo from 'components/Seo';
+import Tags from 'components/Tags';
 import HighlightWrapper from './components/HighlightWrapper';
 
 const shortcodes = { Link, pre: HighlightWrapper };
@@ -32,11 +33,7 @@ const BlogPost: FC<BlogProps> = ({
               <span>📖 {readingTime.text}</span>
             </S.InfoContainer>
             <S.Title>{title}</S.Title>
-            <S.Tags>
-              {tags.map((tag) => (
-                <S.Tag key={tag}>{tag}</S.Tag>
-              ))}
-            </S.Tags>
+            <Tags tags={tags} />
             {summary && <S.Summary>{summary}</S.Summary>}
           </S.Header>
 
