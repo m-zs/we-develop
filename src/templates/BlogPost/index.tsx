@@ -6,8 +6,8 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { BlogProps } from './type';
 import * as S from './style';
 import Seo from 'components/Seo';
-import Tags from 'components/Tags';
 import HighlightWrapper from './components/HighlightWrapper';
+import ArticleHeader from 'components/ArticleHeader';
 
 const shortcodes = { Link, pre: HighlightWrapper };
 
@@ -26,16 +26,14 @@ const BlogPost: FC<BlogProps> = ({
 
       <S.Container>
         <MDXProvider components={shortcodes}>
-          <S.Header>
-            <S.BlogLink to="/blog">Go back to Blog</S.BlogLink>
-            <S.InfoContainer>
-              <span>📆 {date}</span>
-              <span>📖 {readingTime.text}</span>
-            </S.InfoContainer>
-            <S.Title>{title}</S.Title>
-            <Tags tags={tags} />
-            {summary && <S.Summary>{summary}</S.Summary>}
-          </S.Header>
+          <ArticleHeader
+            date={date}
+            readingTime={readingTime.text}
+            title={title}
+            tags={tags}
+            summary={summary}
+            link={{ href: '/blog', text: 'Go back to Blog' }}
+          />
 
           <S.Content>
             <MDXRenderer>{body}</MDXRenderer>
