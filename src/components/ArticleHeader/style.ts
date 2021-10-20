@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-export const Header = styled.header`
+export const Container = styled.header`
   width: 700px;
   max-width: 100%;
   padding-bottom: 30px;

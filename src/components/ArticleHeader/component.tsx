@@ -13,7 +13,7 @@ const ArticleHeader: FC<ArticleProps> = ({
   link,
   className,
 }) => (
-  <S.Header className={className}>
+  <S.Container className={className} data-testid="article-header">
     {link && <S.BlogLink to={link.href}>{link.text}</S.BlogLink>}
     <S.InfoContainer>
       <span>📆 {date.split('T')[0]}</span>
@@ -22,7 +22,7 @@ const ArticleHeader: FC<ArticleProps> = ({
     <S.Title>{title}</S.Title>
     <Tags tags={tags} />
     <S.Summary>{summary}</S.Summary>
-  </S.Header>
+  </S.Container>
 );
 
 export default ArticleHeader;
