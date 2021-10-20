@@ -25,6 +25,7 @@ ${({ theme }) => `
     color: ${theme.colors.font};
     font-size: 16px;
     overflow-x: hidden;
+    transition-duration: 0.2s;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -34,7 +35,8 @@ ${({ theme }) => `
   }
 
   a {
-    text-decoration: none;
+    all: unset;
+    cursor: pointer;
   }
 
   *:focus:not(:focus-visible) {
@@ -42,7 +44,7 @@ ${({ theme }) => `
   }
 
   :focus-visible {
-    outline: ${theme.colors.black} dotted 1px;
+    outline: ${theme.colors.textHighlight} dotted 1px;
     outline-offset: 10px;
   `}
 `;

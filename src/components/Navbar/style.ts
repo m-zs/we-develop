@@ -12,6 +12,7 @@ export const Container = styled.nav`
     background: ${theme.colors.body};
     position: sticky;
     min-height: 70px;
+    transition-duration: 0.2s;
   `}
 `;
 
@@ -34,6 +35,7 @@ export const LinksContainer = styled.div<{ isActive: boolean }>`
   ${({ theme, isActive }) => `
     display: flex;
     background: ${theme.colors.body};
+    transition-duration: 0.2s;
 
     @media (max-width: ${theme.breakpoints.mobile}) {
       transition-duration: 0.1s;
