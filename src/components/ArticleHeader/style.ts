@@ -58,3 +58,9 @@ export const BlogLink = styled(Link)`
     }
   `}
 `;
+
+export const Tags = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: -5px;
+`;

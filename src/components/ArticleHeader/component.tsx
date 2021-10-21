@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { ArticleProps } from './type';
 import * as S from './style';
-import Tags from 'components/Tags';
+import Tag from 'components/Tag';
 
 const ArticleHeader: FC<ArticleProps> = ({
   date,
@@ -20,7 +20,11 @@ const ArticleHeader: FC<ArticleProps> = ({
       <span>📖 {readingTime}</span>
     </S.InfoContainer>
     <S.Title>{title}</S.Title>
-    <Tags tags={tags} />
+    <S.Tags>
+      {tags.map((tag) => (
+        <Tag key={tag} text={tag} />
+      ))}
+    </S.Tags>
     <S.Summary>{summary}</S.Summary>
   </S.Container>
 );
