@@ -1,21 +1,9 @@
 import { PageProps } from 'gatsby';
 
+import { PostBase } from 'shared/types/post';
+
 export interface BlogProps extends PageProps {
   data: {
-    mdx: {
-      id: string;
-      body: string;
-      frontmatter: {
-        title: string;
-        date: string;
-        tags: string[];
-        summary: string;
-      };
-      fields: {
-        readingTime: {
-          text: string;
-        };
-      };
-    };
+    mdx: PostBase & { body: string };
   };
 }
