@@ -11,5 +11,6 @@ export const Container = styled.div`
 
 export const Content = styled.main`
   flex: 1;
-  padding: 20px;
+  padding: 50px 20px;
+  padding-bottom: 80px;
 `;

@@ -13,7 +13,11 @@ module.exports = {
     __PATH_PREFIX__: '',
   },
   testURL: 'http://localhost',
-  setupFiles: ['<rootDir>/loadershim.js', '<rootDir>/__mocks__/custom-mock.js'],
+  setupFiles: [
+    '<rootDir>/loadershim.js',
+    '<rootDir>/__mocks__/custom-mock.js',
+    '<rootDir>/__mocks__/gatsby.js',
+  ],
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/setup-test-env.js'],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
