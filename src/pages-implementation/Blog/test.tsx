@@ -1,7 +1,7 @@
 import { customRender } from 'shared/tests/test-utils';
 
 import { BlogProps } from './type';
-import Blog from './index';
+import Blog from './component';
 
 const createTag = (value: string) => ({ fieldValue: value });
 const createPost = ({ id, title }: { id: string; title: string }) => ({

@@ -1,5 +1,4 @@
 import React, { FC, useState } from 'react';
-import { graphql } from 'gatsby';
 
 import { BlogProps } from './type';
 import * as S from './style';
@@ -49,34 +48,5 @@ const Blog: FC<BlogProps> = ({
     </>
   );
 };
-
-export const pageQuery = graphql`
-  query BlogQuery {
-    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
-      # tags for filtering
-      tags: group(field: frontmatter___tags) {
-        fieldValue
-      }
-      # data
-      posts: edges {
-        node {
-          id
-          slug
-          frontmatter {
-            date
-            summary
-            tags
-            title
-          }
-          fields {
-            readingTime {
-              text
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 export default Blog;
