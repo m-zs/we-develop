@@ -18,36 +18,34 @@ const Blog: FC<BlogProps> = ({
     <>
       <Seo title="Blog" description="All articles in one place." />
 
-      <div>
-        <Filters
-          setActiveTags={setActiveTags}
-          mappedTags={mappedTags}
-          activeTags={activeTags}
-        />
+      <Filters
+        setActiveTags={setActiveTags}
+        mappedTags={mappedTags}
+        activeTags={activeTags}
+      />
 
-        <S.BlogsContainer>
-          {posts.map(
-            ({
-              node: {
-                id,
-                slug,
-                frontmatter,
-                fields: { readingTime },
-              },
-            }) =>
-              activeTags.some((tag) => frontmatter.tags.includes(tag)) && (
-                <S.StyledLink key={id} to={slug}>
-                  <article>
-                    <S.StyledArticleHeader
-                      {...frontmatter}
-                      readingTime={readingTime.text}
-                    />
-                  </article>
-                </S.StyledLink>
-              ),
-          )}
-        </S.BlogsContainer>
-      </div>
+      <S.BlogsContainer>
+        {posts.map(
+          ({
+            node: {
+              id,
+              slug,
+              frontmatter,
+              fields: { readingTime },
+            },
+          }) =>
+            activeTags.some((tag) => frontmatter.tags.includes(tag)) && (
+              <S.StyledLink key={id} to={slug}>
+                <article>
+                  <S.StyledArticleHeader
+                    {...frontmatter}
+                    readingTime={readingTime.text}
+                  />
+                </article>
+              </S.StyledLink>
+            ),
+        )}
+      </S.BlogsContainer>
     </>
   );
 };
