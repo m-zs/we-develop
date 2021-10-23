@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-
-import ArticleHeader from 'components/ArticleHeader';
 import { Link } from 'gatsby';
+
+import { flexColumn } from 'styles/shared';
+import ArticleHeader from 'components/ArticleHeader';
 
 export const BlogsContainer = styled.div`
   ${({ theme }) => `
@@ -15,8 +16,7 @@ export const BlogsContainer = styled.div`
     }
 
     @media(max-width: ${theme.breakpoints.tablet}) {
-      display: flex;
-      flex-direction: column;
+      ${flexColumn}
     }
   `}
 `;

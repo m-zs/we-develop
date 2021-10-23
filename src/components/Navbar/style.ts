@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
+import { flexAlignCenterJustifySpaceBetween, flexColumn } from 'styles/shared';
+
 export const Container = styled.nav`
   ${({ theme }) => `
+    ${flexAlignCenterJustifySpaceBetween}
     top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     z-index: 99;
     padding: 20px;
     background: ${theme.colors.body};
@@ -95,12 +95,11 @@ export const NavLink = styled(Link)`
 `;
 export const ToggleNavButton = styled.button<{ isActive: boolean }>`
   ${({ theme, isActive }) => `
+    ${flexColumn}
     all: unset;
     cursor: pointer;
     user-select: none;
     width: 20px;
-    display: flex;
-    flex-direction: column;
     position: relative;
     padding: 5px;
 

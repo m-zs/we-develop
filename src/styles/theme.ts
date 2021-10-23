@@ -9,33 +9,31 @@ export const themeBase = {
   },
 };
 
+const colorBase = {
+  black: '#000',
+  white: '#fff',
+  gray: '#57606f',
+  textHighlight: '#ef5777',
+  layoutMain: '#2c2c54',
+  layoutHighlight: '#40407a',
+  lightGray: '#f5f6fa',
+};
+
 const dark: DefaultTheme = {
   ...themeBase,
   colors: {
-    black: '#000',
-    white: '#fff',
-    gray: '#57606f',
-    body: '#1e272e',
+    ...colorBase,
     font: '#fff',
-    layoutMain: '#2c2c54',
-    layoutHighlight: '#40407a',
-    lightGray: '#f5f6fa',
-    textHighlight: '#ef5777',
+    body: '#1e272e',
   },
 };
 
 const light: DefaultTheme = {
   ...themeBase,
   colors: {
-    black: '#000',
-    white: '#fff',
-    gray: '#57606f',
+    ...colorBase,
     body: '#fff',
     font: '#1e272e',
-    layoutMain: '#2c2c54',
-    layoutHighlight: '#40407a',
-    lightGray: '#f5f6fa',
-    textHighlight: '#ef5777',
   },
 };
 

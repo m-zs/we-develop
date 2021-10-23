@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
+import { flexAlignCenterJustifySpaceBetween } from 'styles/shared';
+
 export const Container = styled.footer`
   ${({ theme }) => `
-    display: flex;
+    ${flexAlignCenterJustifySpaceBetween}
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
     margin: auto 20px;
     margin-bottom: 40px;
     padding: 40px;

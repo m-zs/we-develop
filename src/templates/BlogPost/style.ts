@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
+import { flexColumn } from 'styles/shared';
+
 export const Container = styled.article`
   ${({ theme }) => `
-    display: flex;
-    flex-direction: column;
+    ${flexColumn}
     align-items: center;
 
     pre {
