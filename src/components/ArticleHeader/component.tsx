@@ -25,7 +25,7 @@ const ArticleHeader: FC<ArticleProps> = ({
         <Tag key={tag} text={tag} />
       ))}
     </S.Tags>
-    <S.Summary>{summary}</S.Summary>
+    {summary && <S.Summary>{summary}</S.Summary>}
   </S.Container>
 );
 
