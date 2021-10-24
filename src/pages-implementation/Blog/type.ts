@@ -10,7 +10,7 @@ export interface BlogProps extends PageProps {
   data: {
     allMdx: {
       tags: Tag[];
-      posts: { node: PostBase & { slug: string } }[];
+      articles: { node: PostBase & { slug: string } }[];
     };
   };
 }

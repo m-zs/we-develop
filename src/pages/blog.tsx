@@ -10,7 +10,7 @@ export const pageQuery = graphql`
         fieldValue
       }
       # data
-      posts: edges {
+      articles: edges {
         node {
           id
           slug

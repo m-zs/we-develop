@@ -1,35 +1,19 @@
 import { customRender } from 'shared/tests/test-utils';
 
+import { createArticle } from 'shared/tests/fixtures';
 import { BlogProps } from './type';
 import Blog from './component';
 
 const createTag = (value: string) => ({ fieldValue: value });
-const createPost = ({ id, title }: { id: string; title: string }) => ({
-  node: {
-    id,
-    slug: 'string',
-    frontmatter: {
-      date: 'string',
-      summary: 'string',
-      tags: ['1', '2'],
-      title,
-    },
-    fields: {
-      readingTime: {
-        text: 'string',
-      },
-    },
-  },
-});
 
-describe('Blog', () => {
+describe('Blog - page', () => {
   const props = {
     data: {
       allMdx: {
         tags: [createTag('1'), createTag('2')],
-        posts: [
-          createPost({ id: '1', title: 'title1' }),
-          createPost({ id: '2', title: 'title2' }),
+        articles: [
+          createArticle({ id: '1', title: 'title1' }),
+          createArticle({ id: '2', title: 'title2' }),
         ],
       },
     },
@@ -39,7 +23,7 @@ describe('Blog', () => {
     const wrapper = customRender(<Blog {...(props as BlogProps)} />);
 
     expect(wrapper.getAllByRole('article').length).toBe(
-      props.data.allMdx.posts.length,
+      props.data.allMdx.articles.length,
     );
   });
 });
