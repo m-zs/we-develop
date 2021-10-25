@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { flexColumn } from 'styles/shared';
 import ArticleHeader from 'components/ArticleHeader';
 
-export const BlogsContainer = styled.div`
+export const Container = styled.div`
   ${({ theme }) => `
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(calc(100% / 3 - 50px), 1fr));

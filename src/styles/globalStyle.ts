@@ -52,7 +52,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     :focus-visible {
-      outline: ${theme.colors.textHighlight} dotted 1px;
+      outline: ${theme.colors.textHighlight} solid 1px;
       outline-offset: 10px;
     }
   `}

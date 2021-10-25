@@ -1,9 +1,9 @@
 import { PageProps } from 'gatsby';
 
-import { PostBase } from 'shared/types/post';
+import { ArticleBase } from 'shared/types/article';
 
 export interface BlogProps extends PageProps {
   data: {
-    mdx: PostBase & { body: string };
+    mdx: ArticleBase & { body: string };
   };
 }

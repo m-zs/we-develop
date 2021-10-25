@@ -1,6 +1,6 @@
 import { PageProps } from 'gatsby';
 
-import { PostBase } from 'shared/types/post';
+import { ArticleBase } from 'shared/types/article';
 
 interface Tag {
   fieldValue: string;
@@ -10,7 +10,7 @@ export interface BlogProps extends PageProps {
   data: {
     allMdx: {
       tags: Tag[];
-      posts: { node: PostBase & { slug: string } }[];
+      articles: { node: ArticleBase & { slug: string } }[];
     };
   };
 }

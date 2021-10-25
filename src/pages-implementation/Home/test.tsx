@@ -1,16 +1,13 @@
 import { customRender } from 'shared/tests/test-utils';
 
 import { createArticle } from 'shared/tests/fixtures';
-import { BlogProps } from './type';
-import Blog from './component';
+import { HomeProps } from './type';
+import Home from './component';
 
-const createTag = (value: string) => ({ fieldValue: value });
-
-describe('Blog - page', () => {
+describe('Home - page', () => {
   const props = {
     data: {
       allMdx: {
-        tags: [createTag('1'), createTag('2')],
         articles: [
           createArticle({ id: '1', title: 'title1' }),
           createArticle({ id: '2', title: 'title2' }),
@@ -20,10 +17,14 @@ describe('Blog - page', () => {
   };
 
   it('should render proper structure', () => {
-    const wrapper = customRender(<Blog {...(props as BlogProps)} />);
+    const wrapper = customRender(<Home {...(props as HomeProps)} />);
 
     expect(wrapper.getAllByRole('article').length).toBe(
       props.data.allMdx.articles.length,
     );
+    // articles + introduction
+    expect(wrapper.getAllByRole('heading', { level: 1 }).length).toBe(3);
+    // per section
+    expect(wrapper.getAllByRole('heading', { level: 2 }).length).toBe(1);
   });
 });

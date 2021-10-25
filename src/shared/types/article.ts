@@ -1,8 +1,8 @@
-export interface PostBase {
+export interface ArticleBase {
   id: string;
   frontmatter: {
     date: string;
-    summary: string;
+    summary?: string;
     tags: string[];
     title: string;
   };
