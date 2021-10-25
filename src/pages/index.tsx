@@ -1,15 +1,12 @@
-import React from 'react';
+import { graphql } from 'gatsby';
 
-import Seo from 'components/Seo';
+export { default } from 'pages-implementation/Home';
 
-const IndexPage = () => {
-  return (
-    <>
-      <Seo title="Homepage" description="" />
-
-      <div>homepage</div>
-    </>
-  );
-};
-
-export default IndexPage;
+export const pageQuery = graphql`
+  query PageQuery($skipArticleSummary: Boolean = true) {
+    # latest articles
+    allMdx(limit: 3, sort: { fields: frontmatter___date, order: DESC }) {
+      ...Article
+    }
+  }
+`;
