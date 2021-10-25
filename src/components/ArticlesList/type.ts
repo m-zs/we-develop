@@ -1,5 +1,5 @@
-import { PostBase } from 'shared/types/post';
+import { ArticleBase } from 'shared/types/article';
 
 export interface ArticlesListProps {
-  articles: { node: PostBase & { slug: string } }[];
+  articles: { node: ArticleBase & { slug: string } }[];
 }

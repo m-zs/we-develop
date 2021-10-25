@@ -1,4 +1,4 @@
-export interface PostBase {
+export interface ArticleBase {
   id: string;
   frontmatter: {
     date: string;
