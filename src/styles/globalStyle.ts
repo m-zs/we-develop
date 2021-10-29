@@ -55,5 +55,15 @@ export const GlobalStyle = createGlobalStyle`
       outline: ${theme.colors.textHighlight} solid 1px;
       outline-offset: 10px;
     }
+
+    section {
+      &:not(:last-of-type) {
+        margin-bottom: 80px;
+
+        @media (max-width: ${theme.breakpoints.tablet}) {
+          margin-top: 60px;
+        }
+      }
+    }
   `}
 `;
