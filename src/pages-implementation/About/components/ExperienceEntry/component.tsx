@@ -29,7 +29,7 @@ const ExperienceEntry: FC<TimelineItem> = ({
               key={i}
             />
           ) : (
-            <S.Project>{text}</S.Project>
+            <S.Project key={i}>{text}</S.Project>
           ),
         )}
       </div>
