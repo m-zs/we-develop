@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import * as S from './style';
 import Seo from 'components/Seo';
 import HighlightedLink from 'components/HighlightedLink';
 
-const Contact = () => (
+const Contact: FC = () => (
   <>
     <Seo title="Contact" description="Get in touch." />
 
