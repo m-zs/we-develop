@@ -5,7 +5,6 @@ import HighlightedLink from 'components/HighlightedLink';
 export const Container = styled.div`
   padding: 50px 0;
   padding-left: 70px;
-  margin-top: 80px;
   position: relative;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
