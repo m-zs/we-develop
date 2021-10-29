@@ -22,7 +22,7 @@ describe('ArticleHeader - component', () => {
     expect(
       wrapper.getByText(`📆 ${baseProps.date.split('T')[0]}`),
     ).toBeInTheDocument();
-    expect(wrapper.getAllByRole('listitem').length).toBe(baseProps.tags.length);
+    expect(wrapper.getAllByTestId('tag').length).toBe(baseProps.tags.length);
   });
 
   it('should render additional class on wrapper', () => {
