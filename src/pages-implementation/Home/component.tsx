@@ -5,6 +5,7 @@ import * as S from './style';
 import Seo from 'components/Seo';
 import ArticlesList from 'components/ArticlesList';
 import HighlightedLink from 'components/HighlightedLink';
+import Introduction from 'components/Introduction';
 
 const Home: FC<HomeProps> = ({ data }) => (
   <>
@@ -13,18 +14,18 @@ const Home: FC<HomeProps> = ({ data }) => (
       description="WE DEVELOP - personal blog about web development, tech books, and other..."
     />
 
-    <S.Section>
-      <S.Introduction>
+    <section>
+      <Introduction>
         Hey, <HighlightedLink href="/about" text="I'm Matt" />, <br />
         and this is my <HighlightedLink href="/blog" text="blog" /> about web
         dev, tech books, and other stuff...
-      </S.Introduction>
-    </S.Section>
+      </Introduction>
+    </section>
 
-    <S.Section>
+    <section>
       <S.Header>Latest Articles</S.Header>
-      <ArticlesList articles={data.allMdx.articles} />
-    </S.Section>
+      <ArticlesList articles={data.allMdx.articles} linkPrefix="/blog/" />
+    </section>
   </>
 );
 

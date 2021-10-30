@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-import * as S from './style';
 import Seo from 'components/Seo';
 import HighlightedLink from 'components/HighlightedLink';
+import Introduction from 'components/Introduction';
 
-const Contact = () => (
+const Contact: FC = () => (
   <>
     <Seo title="Contact" description="Get in touch." />
 
-    <S.Introduction>
+    <Introduction>
       You can contact me by{' '}
       <HighlightedLink
         href="mailto:mzasada93@gmail.com"
@@ -23,7 +23,7 @@ const Contact = () => (
         text="LinkedIn"
         type="a"
       />
-    </S.Introduction>
+    </Introduction>
   </>
 );
 

@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { graphql, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { getImage } from 'gatsby-plugin-image';
 
 import { BlogProps } from './type';
 import * as S from './style';
@@ -15,7 +16,7 @@ const BlogPost: FC<BlogProps> = ({
   data: {
     mdx: {
       body,
-      frontmatter: { title, tags, date, summary },
+      frontmatter: { title, tags, date, summary, banner, bannerAlt },
       fields: { readingTime },
     },
   },
@@ -25,19 +26,22 @@ const BlogPost: FC<BlogProps> = ({
       <Seo title={title} description={summary} />
 
       <S.Container>
-        <MDXProvider components={shortcodes}>
-          <ArticleHeader
-            date={date}
-            readingTime={readingTime.text}
-            title={title}
-            tags={tags}
-            summary={summary}
-            link={{ href: '/blog', text: 'Go back to Blog' }}
-          />
+        <S.BlogLink to="/blog">Go back to Blog</S.BlogLink>
 
-          <S.Content>
+        <ArticleHeader
+          date={date}
+          readingTime={readingTime.text}
+          title={title}
+          tags={tags}
+          summary={summary}
+        />
+
+        <S.FeaturedImage image={getImage(banner)!} alt={bannerAlt} />
+
+        <MDXProvider components={shortcodes}>
+          <S.Main>
             <MDXRenderer>{body}</MDXRenderer>
-          </S.Content>
+          </S.Main>
         </MDXProvider>
       </S.Container>
     </>
@@ -54,6 +58,17 @@ export const pageQuery = graphql`
         date
         tags
         summary
+        bannerAlt
+        banner {
+          childImageSharp {
+            gatsbyImageData(
+              width: 900
+              height: 500
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
       }
       fields {
         readingTime {

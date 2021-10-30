@@ -32,7 +32,7 @@ const Blog: FC<BlogProps> = ({
         activeTags={activeTags}
       />
 
-      <ArticlesList articles={currentArticles} />
+      <ArticlesList articles={currentArticles} skipTags />
     </>
   );
 };
