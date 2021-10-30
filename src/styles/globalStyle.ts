@@ -61,7 +61,7 @@ export const GlobalStyle = createGlobalStyle`
         margin-bottom: 80px;
 
         @media (max-width: ${theme.breakpoints.tablet}) {
-          margin-top: 60px;
+          margin-bottom: 60px;
         }
       }
     }
