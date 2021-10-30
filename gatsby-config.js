@@ -6,7 +6,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -47,5 +46,8 @@ module.exports = {
     'gatsby-remark-reading-time',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-gatsby-cloud',
+    {
+      resolve: 'gatsby-plugin-advanced-sitemap',
+    },
   ],
 };
