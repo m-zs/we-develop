@@ -8,7 +8,6 @@ import { BlogProps } from './type';
 import * as S from './style';
 import Seo from 'components/Seo';
 import HighlightWrapper from './components/HighlightWrapper';
-import ArticleHeader from 'components/ArticleHeader';
 
 const shortcodes = { Link, pre: HighlightWrapper };
 
@@ -28,7 +27,7 @@ const BlogPost: FC<BlogProps> = ({
       <S.Container>
         <S.BlogLink to="/blog">Go back to Blog</S.BlogLink>
 
-        <ArticleHeader
+        <S.StyledArticleHeader
           date={date}
           readingTime={readingTime.text}
           title={title}

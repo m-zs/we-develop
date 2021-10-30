@@ -31,7 +31,7 @@ export const Container = styled.div`
 
 export const Date = styled.span`
   font-family: ${({ theme }) => theme.fonts.headings};
-  font-weight: 900;
+  font-weight: 500;
 `;
 
 export const StyledHighlightedLink = styled(HighlightedLink)`

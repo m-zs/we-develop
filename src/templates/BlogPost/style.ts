@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 import { flexColumn } from 'styles/shared';
+import ArticleHeader from 'components/ArticleHeader';
 
 export const Container = styled.article`
   ${flexColumn}
@@ -120,4 +121,14 @@ export const BlogLink = styled(Link)`
 export const FeaturedImage = styled(GatsbyImage)`
   margin-top: 30px;
   margin-bottom: 60px;
+`;
+
+export const StyledArticleHeader = styled(ArticleHeader)`
+  h1 {
+    font-size: 3.5rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      font-size: 2.5rem;
+    }
+  }
 `;

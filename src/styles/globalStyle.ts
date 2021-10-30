@@ -32,6 +32,11 @@ export const GlobalStyle = createGlobalStyle`
       font-family: ${theme.fonts.headings};
       padding: 0;
       margin: 0;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-weight: 900;
     }
 
     a {
