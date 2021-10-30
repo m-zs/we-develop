@@ -3,6 +3,8 @@ export const saveToLocalStorage = <T>(key: string, value: T) => {
 };
 
 export const getFromLocalStorage = <T>(key: string): T | void => {
+  if (typeof window === 'undefined') return;
+
   try {
     const value = localStorage.getItem(key);
 
