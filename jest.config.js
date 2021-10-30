@@ -16,6 +16,7 @@ module.exports = {
   setupFiles: [
     '<rootDir>/loadershim.js',
     '<rootDir>/__mocks__/custom-mock.js',
+    '<rootDir>/__mocks__/gatsby-plugin-image.js',
     '<rootDir>/__mocks__/gatsby.js',
   ],
   testEnvironment: 'jsdom',
