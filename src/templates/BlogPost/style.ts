@@ -13,19 +13,20 @@ export const Container = styled.article`
   margin: 0 auto;
 `;
 
-export const Main = styled.main`
+export const Main = styled.section`
   ${({ theme }) => `
     font-size: 1.2rem;
     font-weight: 300;
-
+    max-width: 100%;
+    
     pre {
+      overflow: auto;
       display: block;
       position: relative;
       background: #19212e;
       color: ${theme.colors.white};
       padding: 50px 30px;
       border-radius: 10px;
-      overflow: hidden;
       max-width: 100%;
       width: 900px;
       margin-bottom: 30px;
