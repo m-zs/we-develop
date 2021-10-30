@@ -1,11 +1,21 @@
 import styled from 'styled-components';
+import { Link } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import { flexColumn } from 'styles/shared';
 
 export const Container = styled.article`
+  ${flexColumn}
+  align-items: center;
+  width: 900px;
+  max-width: 100%;
+  margin: 0 auto;
+`;
+
+export const Main = styled.main`
   ${({ theme }) => `
-    ${flexColumn}
-    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 300;
 
     pre {
       display: block;
@@ -15,7 +25,9 @@ export const Container = styled.article`
       padding: 50px 30px;
       border-radius: 10px;
       overflow: hidden;
-      white-space: pre-wrap;
+      max-width: 100%;
+      width: 900px;
+      margin-bottom: 30px;
 
       &[class^="snippet"] {
         &:before {
@@ -34,6 +46,7 @@ export const Container = styled.article`
           border-radius: 0 0 4px 4px;
           color: ${theme.colors.white};
         }
+      }
 
       &.language-js, &.language-jsx {
         &:before {
@@ -72,17 +85,39 @@ export const Container = styled.article`
       }
     }
 
-    h1, h2, h3, h4, h5 {
+
+
+    h1, h2, h3, h4, h5, p {
+      margin: 0 auto;
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
+      max-width: 700px;
+    }
+
+    h1, h2 {
+      margin-top: 25px;
+      margin-bottom: 35px;
     }
   `}
 `;
 
-export const Content = styled.section`
-  width: 700px;
-  max-width: 100%;
-  margin-top: 15px;
-  font-size: 1.2rem;
-  font-weight: 300;
+export const BlogLink = styled(Link)`
+  ${({ theme }) => `
+    color: ${theme.colors.textHighlight};
+    font-family: ${theme.fonts.headings};
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    align-self: flex-start;
+    margin-bottom: 60px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  `}
+`;
+
+export const FeaturedImage = styled(GatsbyImage)`
+  margin-top: 30px;
+  margin-bottom: 60px;
 `;

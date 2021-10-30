@@ -9,7 +9,7 @@ export const createArticle = ({
     id,
     slug: 'string',
     frontmatter: {
-      date: 'string',
+      date: new Date().toString(),
       summary: 'string',
       tags: ['1', '2'],
       title,

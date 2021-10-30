@@ -24,7 +24,7 @@ const Home: FC<HomeProps> = ({ data }) => (
 
     <section>
       <S.Header>Latest Articles</S.Header>
-      <ArticlesList articles={data.allMdx.articles} />
+      <ArticlesList articles={data.allMdx.articles} linkPrefix="/blog/" />
     </section>
   </>
 );

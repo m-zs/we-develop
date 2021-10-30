@@ -1,30 +1,42 @@
 import React, { FC } from 'react';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-import { ArticleProps } from './type';
+import { ArticleHeaderProps } from './type';
 import * as S from './style';
 import Tag from 'components/Tag';
+import { formatDate } from './utils';
 
-const ArticleHeader: FC<ArticleProps> = ({
+const ArticleHeader: FC<ArticleHeaderProps> = ({
   date,
   readingTime,
   title,
   tags,
   summary,
-  link,
   className,
+  ...bannerData
 }) => (
   <S.Container className={className} data-testid="article-header">
-    {link && <S.BlogLink to={link.href}>{link.text}</S.BlogLink>}
-    <S.InfoContainer>
-      <span>📆 {date.split('T')[0]}</span>
-      <span>📖 {readingTime}</span>
-    </S.InfoContainer>
+    {bannerData.banner && (
+      <GatsbyImage
+        image={getImage(bannerData.banner)!}
+        alt={bannerData.bannerAlt}
+      />
+    )}
+
+    <S.PostInfo>
+      {formatDate(date)} - {readingTime}
+    </S.PostInfo>
+
     <S.Title>{title}</S.Title>
-    <S.Tags>
-      {tags.map((tag) => (
-        <Tag key={tag} text={tag} />
-      ))}
-    </S.Tags>
+
+    {tags && (
+      <S.Tags>
+        {tags.map((tag) => (
+          <Tag key={tag} text={tag} />
+        ))}
+      </S.Tags>
+    )}
+
     {summary && <S.Summary>{summary}</S.Summary>}
   </S.Container>
 );

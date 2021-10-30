@@ -7,8 +7,8 @@ export interface ArticleBase {
     summary?: string;
     tags?: string[];
     title: string;
-    banner: IGatsbyImageData;
-    bannerAlt: string;
+    banner?: IGatsbyImageData;
+    bannerAlt?: string;
   };
   fields: {
     readingTime: {
