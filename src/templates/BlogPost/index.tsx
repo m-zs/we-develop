@@ -19,33 +19,31 @@ const BlogPost: FC<BlogProps> = ({
       fields: { readingTime },
     },
   },
-}) => {
-  return (
-    <>
-      <Seo title={title} description={summary} />
+}) => (
+  <>
+    <Seo title={title} description={summary} />
 
-      <S.Container>
-        <S.BlogLink to="/blog">Go back to Blog</S.BlogLink>
+    <S.Container>
+      <S.BlogLink to="/blog">Go back to Blog</S.BlogLink>
 
-        <S.StyledArticleHeader
-          date={date}
-          readingTime={readingTime.text}
-          title={title}
-          tags={tags}
-          summary={summary}
-        />
+      <S.StyledArticleHeader
+        date={date}
+        readingTime={readingTime.text}
+        title={title}
+        tags={tags}
+        summary={summary}
+      />
 
-        <S.FeaturedImage image={getImage(banner)!} alt={bannerAlt} />
+      <S.FeaturedImage image={getImage(banner)!} alt={bannerAlt} />
 
-        <MDXProvider components={shortcodes}>
-          <S.Main>
-            <MDXRenderer>{body}</MDXRenderer>
-          </S.Main>
-        </MDXProvider>
-      </S.Container>
-    </>
-  );
-};
+      <MDXProvider components={shortcodes}>
+        <S.Main>
+          <MDXRenderer>{body}</MDXRenderer>
+        </S.Main>
+      </MDXProvider>
+    </S.Container>
+  </>
+);
 
 export const pageQuery = graphql`
   query BlogPostQuery($id: String) {
