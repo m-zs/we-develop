@@ -23,6 +23,7 @@ const Navbar = () => {
           onClick={() => setIsActive(!isActive)}
           isActive={isMobileNavVisible}
           data-testid="navbar-hamburger"
+          aria-label="toggle navigation"
         >
           <span />
           <span />
