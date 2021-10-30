@@ -8,9 +8,20 @@ export const articleFragment = graphql`
         slug
         frontmatter {
           date
-          tags
           title
+          tags @skip(if: $skipArticleTags)
           summary @skip(if: $skipArticleSummary)
+          bannerAlt
+          banner {
+            childImageSharp {
+              gatsbyImageData(
+                width: 420
+                height: 500
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
         }
         fields {
           readingTime {
