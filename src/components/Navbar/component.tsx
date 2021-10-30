@@ -41,10 +41,10 @@ const Navbar = () => {
         <S.NavLink to="/blog" partiallyActive activeClassName="active">
           Blog
         </S.NavLink>
-        <S.NavLink to="/about" activeClassName="active">
+        <S.NavLink to="/about" partiallyActive activeClassName="active">
           About
         </S.NavLink>
-        <S.NavLink to="/contact" activeClassName="active">
+        <S.NavLink to="/contact" partiallyActive activeClassName="active">
           Contact
         </S.NavLink>
       </S.LinksContainer>
