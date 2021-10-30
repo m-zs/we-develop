@@ -11,7 +11,7 @@ export const Container = styled.nav`
     padding: 20px;
     background: ${theme.colors.body};
     position: sticky;
-    min-height: 70px;
+    min-height: 100px;
     transition-duration: 0.2s;
   `}
 `;
@@ -38,10 +38,10 @@ export const LinksContainer = styled.div<{ isActive: boolean }>`
     transition-duration: 0.2s;
 
     @media (max-width: ${theme.breakpoints.mobile}) {
-      transition-duration: 0.1s;
+      transition-duration: 0.15s;
       position: fixed;
       width: 100%;
-      top: ${isActive ? '70px' : '68px'};
+      top: ${isActive ? '90px' : '80px'};
       left: 0;
       box-sizing: border-box;
       flex-wrap: wrap;
@@ -59,7 +59,6 @@ export const NavLink = styled(Link)`
     display: inline-flex;
     position: relative;
     margin: 10px;
-    margin-bottom: 15px;
     text-decoration: none;
     color: inherit;
     font-family: ${theme.fonts.headings};
