@@ -21,15 +21,20 @@ export const Main = styled.section`
     
     pre {
       overflow: auto;
-      display: block;
       position: relative;
       background: #19212e;
       color: ${theme.colors.white};
-      padding: 50px 30px;
+      padding-bottom: 30px;
+      padding-top: 50px;
       border-radius: 10px;
       max-width: 100%;
       width: 900px;
-      margin-bottom: 30px;
+      margin: 40px 0;
+      font-size: 1rem;
+
+      .token-line {
+        padding: 0 30px;
+      }
 
       &[class^="snippet"] {
         &:before {
@@ -85,20 +90,46 @@ export const Main = styled.section`
           background: #2965f1;
         }
       }
+
+      &.language-json {
+        &:before {
+          content: "JSON";
+          background: #000;
+        }
+      }
     }
 
+    code {
+      background: #19212e;
+      color: ${theme.colors.white};
+      padding: 3px 10px;
+      border-radius: 10px;
+    }
 
-
-    h1, h2, h3, h4, h5, p {
+    h2, h3, h4, h5, p, ul, ol {
       margin: 0 auto;
       display: block;
       margin-bottom: 30px;
       max-width: 700px;
     }
 
-    h1, h2 {
-      margin-top: 25px;
+
+    li {
+      margin-top: 10px;
+    }
+
+    h2:not(:first-of-type) {
+      margin-top: 50px;
       margin-bottom: 35px;
+    }
+
+    a {
+      color: ${theme.colors.textHighlight};
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   `}
 `;
