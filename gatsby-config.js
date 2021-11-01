@@ -56,5 +56,6 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-gatsby-cloud',
     'gatsby-plugin-advanced-sitemap',
+    'gatsby-plugin-robots-txt',
   ],
 };
