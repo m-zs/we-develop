@@ -6,6 +6,7 @@ export const Container = styled.div`
   padding: 50px 0;
   padding-left: 70px;
   position: relative;
+  margin-top: 80px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: 40px 0;
