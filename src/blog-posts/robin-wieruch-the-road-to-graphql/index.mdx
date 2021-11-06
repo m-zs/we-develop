@@ -1,0 +1,87 @@
+---
+title: The Road to Graphql by Robin Wieruch - is it worth it?
+date: 2021-11-06
+tags: ['graphql', 'apollo', 'it books', 'review', 'react', 'node.js']
+banner: ./main.jpg
+bannerAlt: Photo by Mikołaj on Unsplash
+summary: When you search for a "GraphQL books" phrase, you will find The Road to Graphql by Robin Wieruch in the top results. If you are wondering what is in it for you or what are the alternatives - I will try to answer your questions
+---
+
+## Introduction
+
+The book is split into multiple parts that take on GraphQL, react, and node.js (a bit about the database as well). I'm going to sum up the parts that seem most important to me and argue a little bit about them.
+
+
+## Introduction and Fundamentals
+
+This section includes a few book chapters combined. These chapters cover basic topics about GraphQL like history, mutations, queries, fragments, comparison to REST, etc. Nothing you couldn't find inside the official documentation at https://graphql.org/learn/. Even less, since the book goal is not to show you full specification, it's more of a written tutorial with some methods described, and this is a minus for me - having some more advanced examples (and more of them) with use cases would be great.
+
+There is a part related to [Apollo](https://www.apollographql.com) as well. I'm going to skip that since it's just a description of technology selected in this book.
+
+#### If you are looking for alternatives (and more) for this part, you can see:
+- [GraphQL official docs](https://graphql.org/learn/) - just read everything (this is suggested in the book as well)
+- [GraphQL vs Rest](https://www.apollographql.com/blog/graphql/basics/graphql-vs-rest/)
+- [Graphql misconceptions](https://www.apollographql.com/blog/graphql/basics/demystifying-graphql-misconceptions-top-five-graphql-myths-debunked/)
+- [Apollo introduction](https://www.apollographql.com/docs/)
+
+## React with GraphQL
+
+This is the part where you are going to write your Apollo-like client. A bare minimum, but the goal is to show you the inner working of technology, how you can request GraphQL data with default request tools (axios in this case, could be done with fetch alone since it's just a POST request with a specific body).
+
+Besides getting clients alone, there are some react design patterns used - render props and higher-order components, for example, code keep the overall good quality (as Robin's blog reader I expected that).
+
+Overall these chapters are not the most advanced but show really important things about how things work and this is something that I like to see in any book.
+
+#### Alternatives:
+- [Netlify blog post about using fetch to get GraphQL data](https://www.netlify.com/blog/2020/12/21/send-graphql-queries-with-the-fetch-api-without-using-apollo-urql-or-other-graphql-clients/)
+- [React docs](https://reactjs.org/docs/) including [HOC](https://reactjs.org/docs/higher-order-components.html), [render props](https://reactjs.org/docs/render-props.html)
+
+## Apollo Client
+
+This chapter covers all kinds of Apollo Client and React interactions. Zero configuration with [apollo-boost](https://www.npmjs.com/package/apollo-boost), and Apollo Client configuration, using queries, mutations, pagination, error handling, react design patterns, optimistic UI, filtering, and prefetching are included as well.
+
+Subscriptions are not covered yet - GitHub GraphQL API got used for interacting, and I guess there is no way to subscribe.
+
+Overall - most of the Apollo Client documentation is implemented in react app using good practices.
+
+#### Alternatives:
+- [Going through whole Apollo Client docs](https://www.apollographql.com/docs/react/)
+- Again - [React docs](https://reactjs.org/docs/) including [HOC](https://reactjs.org/docs/higher-order-components.html), [render props](https://reactjs.org/docs/render-props.html)
+
+
+## Apollo Server
+
+Until now, I wasn't convinced too much about how to rate this book. Around 5 - 6 was my guess since the first part seemed off, the second and third improved a lot, and now - in my opinion, it's time for the best chapters.
+
+In this part, you get Apollo Server setup with ORM and PostgreSQL, subscriptions, and most of the topics included in the docs implemented in node.js Express-based app.
+
+For good parts that bumped my score:
+- Examples of [schema stitching](https://hasura.io/blog/the-ultimate-guide-to-schema-stitching-in-graphql-f30178ac0072/) forced by the implementation (the structure split as you do in real apps)
+- Connecting resolvers to a database
+- The part about pagination methods, including both implementations (offset + limit vs cursor)
+- Both authentication and role + access-based authorization (I'm not a fan of single JWT kept in browser storage, but for this case - it's ok)
+- A common problem related to GraphQL and ORM usage, it's about database queries - yes, you guessed it right - n +1 , but I think it wasn't named, so it's a small minus
+- Testing e2e with TEST database
+- Heroku deployment
+
+#### Alternatives:
+- [Apollo Server docs (all)](https://www.apollographql.com/docs/apollo-server/)
+- [n + 1 for GraphQL](https://medium.com/the-marcy-lab-school/what-is-the-n-1-problem-in-graphql-dd4921cb3c1a) and overall [discussion](https://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem-in-orm-object-relational-mapping)
+- [Schema stitching](https://hasura.io/blog/the-ultimate-guide-to-schema-stitching-in-graphql-f30178ac0072/)
+- GraphQL subscribe is just a websocket connection, it's good to have base understanding of that as well - [great introduction by 
+Hussein Nasser](https://www.youtube.com/watch?v=2Nt-ZrNP22A&list=PLQnljOFTspQU6zO0drAYHFtkkyfNJw1IO&index=4)
+- [What are ORMs](https://blog.bitsrc.io/what-is-an-orm-and-why-you-should-use-it-b2b6f75f5e2a)
+- [About pagination methods](https://uxdesign.cc/why-facebook-says-cursor-pagination-is-the-greatest-d6b98d86b6c0)
+- [About DataLoader](https://www.yld.io/blog/graphgl-dataloader-utility-there-is-no-magic/)
+- [node.js on Heroku](https://devcenter.heroku.com/articles/deploying-nodejs)
+- [express.js basics](https://medium.com/@LindaVivah/the-beginners-guide-understanding-node-js-express-js-fundamentals-e15493462be1)
+
+## Conclusion
+
+Book is a written tutorial rather than a kind of technology encyclopedia (I have books like the [YDKJS](https://github.com/getify/You-Dont-Know-JS) series in mind here). 
+
+Some parts will hook you up into basic methods, some might be outdated or missing, but the author is openly suggesting to read the documentation - which you should do.
+
+Nonetheless, it's a decent position in a case when you had no prior experience with GraphQL, but you have at least a basic or better understanding of React.  Plus, some basic knowledge about APIs and related topics. Going into databases, node + express, Data Loders, ORM-related issues, and more might be hard for a complete beginner.
+
+### Overall score: 7 / 10 or 4 / 5
