@@ -5,14 +5,17 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "node": true
+    "node": true,
+    "jest/globals": true
   },
   "parser": "@typescript-eslint/parser",
   "extends": [
     "react-app",
     "plugin:react/recommended",
     "standard",
-    "eslint:recommended"
+    "eslint:recommended",
+    "plugin:jest/recommended",
+    "plugin:testing-library/react"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -22,12 +25,13 @@
     "sourceType": "module",
     "requireConfigFile": false
   },
-  "plugins": ["react"],
+  "plugins": ["react", "prettier", "jest", "testing-library"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "multiline-ternary": "off",
     "no-use-before-define": "off",
     "comma-dangle": "off",
-    "semi": "off"
+    "semi": "off",
+    "prettier/prettier": "error"
   }
 }

@@ -1,4 +1,4 @@
-import { customRender } from 'shared/tests/test-utils';
+import { customRender, screen } from 'shared/tests/test-utils';
 import userEvent from '@testing-library/user-event';
 
 import Toggle from './component';
@@ -15,29 +15,29 @@ describe('Toggle - component', () => {
   });
 
   it('should not render images if related props ar not passed', () => {
-    const wrapper = customRender(<Toggle toggleCallback={jest.fn()} />);
+    customRender(<Toggle toggleCallback={jest.fn()} />);
 
-    expect(wrapper.queryAllByRole('img').length).toBe(0);
+    expect(screen.queryAllByRole('img').length).toBe(0);
   });
 
   it('should render images if related props are passed', () => {
-    const wrapper = customRender(<Toggle {...props} />);
+    customRender(<Toggle {...props} />);
 
-    expect(wrapper.getAllByRole('img').length).toBe(2);
+    expect(screen.getAllByRole('img').length).toBe(2);
   });
 
   it('should trigger callback on click', () => {
-    const wrapper = customRender(<Toggle {...props} />);
+    customRender(<Toggle {...props} />);
 
-    userEvent.click(wrapper.getByRole('button'));
+    userEvent.click(screen.getByRole('button'));
 
     expect(props.toggleCallback).toHaveBeenCalledWith();
   });
 
   it('should trigger callback on keydown', () => {
-    const wrapper = customRender(<Toggle {...props} />);
+    customRender(<Toggle {...props} />);
 
-    wrapper.getByRole('button').focus();
+    screen.getByRole('button').focus();
     // 2 valid keys, 1 invalid
     userEvent.keyboard('{Enter}{Spacebar}{o}');
 

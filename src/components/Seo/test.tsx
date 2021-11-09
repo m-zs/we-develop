@@ -11,7 +11,7 @@ describe('Seo - component', () => {
 
     const { title, metaTags } = Helmet.peek();
 
-    expect(title?.includes(props.title));
+    expect(title?.includes(props.title)).toBeTruthy();
     expect(metaTags).toEqual(
       expect.arrayContaining([
         { name: 'description', content: props.description },

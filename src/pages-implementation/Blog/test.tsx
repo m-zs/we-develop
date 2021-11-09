@@ -1,4 +1,4 @@
-import { customRender } from 'shared/tests/test-utils';
+import { customRender, screen } from 'shared/tests/test-utils';
 
 import { createArticle } from 'shared/tests/fixtures';
 import { BlogProps } from './type';
@@ -20,9 +20,9 @@ describe('Blog - page', () => {
   };
 
   it('should render proper structure', () => {
-    const wrapper = customRender(<Blog {...(props as BlogProps)} />);
+    customRender(<Blog {...(props as BlogProps)} />);
 
-    expect(wrapper.getAllByRole('article').length).toBe(
+    expect(screen.getAllByRole('article').length).toBe(
       props.data.allMdx.articles.length,
     );
   });
