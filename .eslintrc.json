@@ -22,12 +22,13 @@
     "sourceType": "module",
     "requireConfigFile": false
   },
-  "plugins": ["react"],
+  "plugins": ["react", "prettier"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "multiline-ternary": "off",
     "no-use-before-define": "off",
     "comma-dangle": "off",
-    "semi": "off"
+    "semi": "off",
+    "prettier/prettier": "error"
   }
 }
