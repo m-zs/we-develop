@@ -1,4 +1,4 @@
-import { customRender } from 'shared/tests/test-utils';
+import { customRender, screen } from 'shared/tests/test-utils';
 
 import { createArticle } from 'shared/tests/fixtures';
 import { HomeProps } from './type';
@@ -17,14 +17,14 @@ describe('Home - page', () => {
   };
 
   it('should render proper structure', () => {
-    const wrapper = customRender(<Home {...(props as HomeProps)} />);
+    customRender(<Home {...(props as HomeProps)} />);
 
-    expect(wrapper.getAllByRole('article').length).toBe(
+    expect(screen.getAllByRole('article').length).toBe(
       props.data.allMdx.articles.length,
     );
     // articles + introduction
-    expect(wrapper.getAllByRole('heading', { level: 1 }).length).toBe(3);
+    expect(screen.getAllByRole('heading', { level: 1 }).length).toBe(3);
     // per section
-    expect(wrapper.getAllByRole('heading', { level: 2 }).length).toBe(1);
+    expect(screen.getAllByRole('heading', { level: 2 }).length).toBe(1);
   });
 });

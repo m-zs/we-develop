@@ -1,5 +1,5 @@
 import { IGatsbyImageData } from 'gatsby-plugin-image';
-import { customRender } from 'shared/tests/test-utils';
+import { customRender, screen } from 'shared/tests/test-utils';
 
 import ArticleHeader from './component';
 
@@ -19,26 +19,24 @@ describe('ArticleHeader - component', () => {
   };
 
   it('should render valid base structure without banner', () => {
-    const wrapper = customRender(<ArticleHeader {...baseProps} />);
+    customRender(<ArticleHeader {...baseProps} />);
 
-    expect(wrapper.getByText(baseProps.summary)).toBeInTheDocument();
-    expect(wrapper.getByText(baseProps.title)).toBeInTheDocument();
+    expect(screen.getByText(baseProps.summary)).toBeInTheDocument();
+    expect(screen.getByText(baseProps.title)).toBeInTheDocument();
     expect(
-      wrapper.getByText(`${DATE_RETURN} - ${baseProps.readingTime}`),
+      screen.getByText(`${DATE_RETURN} - ${baseProps.readingTime}`),
     ).toBeInTheDocument();
-    expect(wrapper.getAllByTestId('tag').length).toBe(baseProps.tags.length);
-    expect(wrapper.queryByRole('img')).toBeNull();
+    expect(screen.getAllByTestId('tag').length).toBe(baseProps.tags.length);
+    expect(screen.queryByRole('img')).toBeNull();
   });
 
   it('should render additional class on wrapper', () => {
     const className = 'classname';
 
-    const wrapper = customRender(
-      <ArticleHeader {...baseProps} className={className} />,
-    );
+    customRender(<ArticleHeader {...baseProps} className={className} />);
 
     expect(
-      wrapper
+      screen
         .getByTestId('article-header')
         .getAttribute('class')
         ?.includes(className),
@@ -46,7 +44,7 @@ describe('ArticleHeader - component', () => {
   });
 
   it('should render image in structure', async () => {
-    const wrapper = customRender(
+    customRender(
       <ArticleHeader
         {...baseProps}
         banner={{} as IGatsbyImageData}
@@ -54,6 +52,6 @@ describe('ArticleHeader - component', () => {
       />,
     );
 
-    expect(wrapper.getByRole('img')).toBeInTheDocument();
+    expect(screen.getByRole('img')).toBeInTheDocument();
   });
 });

@@ -14,7 +14,8 @@
     "plugin:react/recommended",
     "standard",
     "eslint:recommended",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "plugin:testing-library/react"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -24,7 +25,7 @@
     "sourceType": "module",
     "requireConfigFile": false
   },
-  "plugins": ["react", "prettier", "jest"],
+  "plugins": ["react", "prettier", "jest", "testing-library"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "multiline-ternary": "off",

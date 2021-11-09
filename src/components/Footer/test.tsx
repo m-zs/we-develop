@@ -1,4 +1,4 @@
-import { customRender } from 'shared/tests/test-utils';
+import { customRender, screen } from 'shared/tests/test-utils';
 
 import Footer from './component';
 
@@ -9,8 +9,8 @@ describe('Footer - component', () => {
       toggleThemeCallback: jest.fn(),
     };
 
-    const wrapper = customRender(<Footer {...props} />);
+    customRender(<Footer {...props} />);
 
-    expect(wrapper.getByTestId('footer')).toBeInTheDocument();
+    expect(screen.getByTestId('footer')).toBeInTheDocument();
   });
 });

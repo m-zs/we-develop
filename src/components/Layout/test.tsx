@@ -1,4 +1,4 @@
-import { render } from 'shared/tests/test-utils';
+import { render, screen } from 'shared/tests/test-utils';
 
 import Layout from './component';
 
@@ -6,14 +6,14 @@ describe('Layout - component', () => {
   const Children = () => <div data-testid="children" />;
 
   it('should render passed children and valid structure', () => {
-    const wrapper = render(
+    render(
       <Layout>
         <Children />
       </Layout>,
     );
 
-    expect(wrapper.getByTestId('children')).toBeInTheDocument();
-    expect(wrapper.getByTestId('navbar')).toBeInTheDocument();
-    expect(wrapper.getByTestId('footer')).toBeInTheDocument();
+    expect(screen.getByTestId('children')).toBeInTheDocument();
+    expect(screen.getByTestId('navbar')).toBeInTheDocument();
+    expect(screen.getByTestId('footer')).toBeInTheDocument();
   });
 });

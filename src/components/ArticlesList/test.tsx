@@ -1,4 +1,4 @@
-import { customRender } from 'shared/tests/test-utils';
+import { customRender, screen } from 'shared/tests/test-utils';
 
 import { createArticle } from 'shared/tests/fixtures';
 import ArticlesList from './component';
@@ -12,15 +12,15 @@ describe('ArticlesList', () => {
   };
 
   it('should render proper structure', () => {
-    const wrapper = customRender(<ArticlesList {...props} />);
+    customRender(<ArticlesList {...props} />);
 
-    expect(wrapper.getAllByRole('article').length).toBe(props.articles.length);
-    expect(wrapper.getAllByTestId('tag').length).toBeTruthy();
+    expect(screen.getAllByRole('article').length).toBe(props.articles.length);
+    expect(screen.getAllByTestId('tag').length).toBeTruthy();
   });
 
   it('should not render tags with skipTags prop', () => {
-    const wrapper = customRender(<ArticlesList {...props} skipTags />);
+    customRender(<ArticlesList {...props} skipTags />);
 
-    expect(wrapper.queryAllByTestId('tag').length).toBeFalsy();
+    expect(screen.queryAllByTestId('tag').length).toBeFalsy();
   });
 });
