@@ -1,0 +1,138 @@
+---
+title: Redux in Action by Marc Garreau - is it worth it?
+date: 2021-11-12
+tags: ['it books', 'review', 'react', 'redux']
+banner: ./main.jpg
+bannerAlt: Photo by Olia Gozha on Unsplash
+summary: After searching for the "redux book" phrase, you will have a few options - Redux in Action by Marc Garreau is one of them. If you wonder if it is worth getting it - read the short review and decide.
+---
+
+## Introduction
+
+To stay loyal to a format that I took on the first review - I will sum up the main parts of the book, review them one by one and give some alternatives.
+
+I checked the official documentation and related articles to have a good comparison of what is included in the book, or what might be missing, so get ready!
+
+## Fundamentals
+
+As usually at the start - we are getting an overall view of the basics. This part covers all about Flux architecture, what it is, and what problems try to solve.
+
+If you had any experience with Redux, then you are probably aware of its structure. Dispatchers, stores, actions, action creators, middlewares, and selectors, plus unidirectional data flow and other related aspects - this is what you get from these chapters.
+
+Don't forget about the three main principles of Flux:
+- single source of truth
+- read-only state
+- pure function for handling state changes
+
+And we are about to get ready for the next chapters.
+
+#### As you probably expected - this kind of information might be easy to find:
+- [Official docs core concepts](https://redux.js.org/introduction/core-concepts)
+- [Intro from Facebook](https://facebook.github.io/flux/)
+- [FAQ](https://redux.js.org/faq/general)
+
+## Starting with CRA and task management app
+
+In this part, the author takes on a base app configuration, creating components, redux lifecycle (actions, reducers, store), and connecting it to React components.
+
+Common Redux code is supported by flow graphs and code blocks that will help you understand basic concepts.
+
+Explanations are clear and provided code is easy to follow. It is a dead-simple feature - kind of TODO list at this stage. No side effects, no complicated patterns - this is what you should expect from the introduction, and this is what you get.
+
+Worth noticing - the author gives some simple exercises that you can take on if you wish. They are related to the flow and will be explained (and solved) right after listing.
+
+#### Alternatives:
+- [Redux docs](https://redux.js.org/introduction/learning-resources)
+- [Redux debugging](https://blog.logrocket.com/redux-devtools-tips-tricks-for-faster-debugging/)
+
+## Working with API and async actions
+
+This part is all about connecting your app to an outside world - splitting action creators into synchronous and asynchronous, adding popular thunk middleware, and handling requests (side effects) inside action creators.
+
+Besides the Redux-related code, you will get more exercises, some error handling, and connecting to React components.
+
+#### Alternatives:
+- [Thunk docs](https://redux.js.org/usage/writing-logic-thunks)
+- [Error handling](https://egghead.io/lessons/javascript-redux-displaying-error-messages)
+
+## Middleware
+
+As the section name might suggest - we are getting info about middleware here. Starting with the basic concepts through logging middleware to replacing regular API calls made with thunks.
+
+As before, exercises and solutions with code blocks are waiting for you at the end of each section.
+
+#### Alternatives:
+- [Middleware docs](https://redux.js.org/understanding/history-and-design/middleware)
+- [Middleware API on video](https://www.youtube.com/watch?v=Gjiu7Lgdg3s)
+
+## Complex side effects (with redux-saga)
+
+If you have any experience with sagas, you might have a strong opinion about them already. If you don't - it's good to take a look at them. When it comes to some more complicated side effects - they might be handy.
+
+Besides sagas, you will get some background about generators and iterators.
+
+As in previous parts - pros and cons plus alternatives are discussed.
+
+#### Alternatives:
+- [Sagas docs](https://redux-saga.js.org/)
+- [Sagas vs thunks](https://medium.com/@shoshanarosenfield/redux-thunk-vs-redux-saga-93fe82878b2d)
+
+## Redux selectors, memoization, composition, and normalization
+
+It's time to introduce the case of memoization and composition with Redux selectors. Practices for splitting functions that process data and ways of organizing them is the name of this part.
+
+The second name is a normalization of the store shown on an example with its pros and cons.
+
+Overall - pretty interesting chapters with solid fundamentals and common problems that you might see in your application will be explained.
+
+#### Alternatives:
+- [Normalizr for normalization](https://github.com/paularmstrong/normalizr)
+- [Reselect for selectors](https://github.com/reduxjs/reselect)
+- [Docs](https://redux.js.org/introduction/learning-resources#normalization)
+
+## Everyone's favorite time - time for testing
+
+As for everyone, it's my favorite part as well. Testing every kind of action creators, store, sagas, React components - is what developers love to do.
+
+Well, at least you get recipes for most common cases here, so it should be a little bit less painful for the future.
+
+#### Alternatives:
+- [Docs](https://redux.js.org/introduction/ecosystem#testing)
+
+## Performance
+Another interesting chapter. Besides ways of checking performance, multiple ways to increase it are listed. Related to Redux itself and React as well.
+
+To name a few:
+- caching
+- action batching
+- organizing connect()
+- memoization
+- React lifecycle methods (shouldUpdate, pure component)
+- pagination
+
+#### Alternatives:
+- [Docs](https://redux.js.org/faq/performance#performance)
+- [Connecting lists](https://blog.isquaredsoftware.com/2017/01/practical-redux-part-6-connected-lists-forms-and-performance/)
+
+
+## Structuring Redux
+The last of the important chapters. Shows common ways of organizing code and files/ folders.
+
+Takes on three main methods:
+- Group by type
+- Group by feature
+- Redux ducks
+
+## Conclusion
+
+Overall - it is a solid position if you need an introduction or to refresh your knowledge. 
+
+Progression makes sense, and most of the common concerns are covered.
+
+Pros and cons of each introduced subject and potential alternatives are the things that I would like to see more often in tech-related content.
+
+Exercises and solutions are strictly related to the app, so you can try to implement them on your own.
+
+There are small cons tho, the book is not from the time when Redux toolkit got introduced, so it's not covered. I miss an example of a higher-order reducer with some HOC action as well.
+
+Anyway, it's a position worth recommending if you are up to reading more than watching.
